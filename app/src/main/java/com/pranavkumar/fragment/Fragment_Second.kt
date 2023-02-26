@@ -86,7 +86,15 @@ class Fragment_Second : Fragment(), ActivityInterface {
                 3->{
                     linearLayout.setBackgroundColor(ContextCompat.getColor(fragmentActivity,R.color.yellow))
                 }
+
                 else->{}
         }
     }
+
+    override fun ResetInterface(i: Int) {
+        tvHello.setText("")
+        linearLayout.setBackgroundColor(ContextCompat.getColor(fragmentActivity,R.color.white))
+    }
+
+
 }

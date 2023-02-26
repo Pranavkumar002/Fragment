@@ -3,7 +3,6 @@ package com.pranavkumar.fragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.pranavkumar.fragment.databinding.ActivityFragmentBinding
 
 class FragmentActivity : AppCompatActivity() {
@@ -15,7 +14,7 @@ class FragmentActivity : AppCompatActivity() {
         binding = ActivityFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnAlertDialog.setOnClickListener {
-            AlertDialog.Builder(this).apply {
+            android.app.AlertDialog.Builder(this).apply {
                 setCancelable(false)
                 setTitle("Select Color")
                 setMessage("Select a color that you want to set as fragment background")
@@ -32,6 +31,9 @@ class FragmentActivity : AppCompatActivity() {
                     i++
                 }
             }.show()
+        }
+        binding.btnClear.setOnClickListener{
+            ActivityInterface.ResetInterface(i=0)
         }
     }
     fun showToast(){
